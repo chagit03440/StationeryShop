@@ -34,15 +34,7 @@
  margin-top: 20px;
 }
 
-
-
-
-
-
-
-
-
-
+/* footer style */
 .footericons {
     display: flex;
     justify-content: center;
@@ -51,13 +43,13 @@
     width: 10%;
     padding-top: 30px;
 }
-    
-#icon{
-    color:white;
+
+#icon {
+    color: white;
     font-size: 25px;
 }
 
-.ftxt{
+.ftxt {
     font-size: 25px;
     width: auto;
     text-decoration: none;
@@ -66,15 +58,16 @@
     padding-right: 20px;
     font-weight: normal;
 }
+
 .footertext {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
     font-family: 'Assistant', sans-serif;
-    padding-top:20px;
-    color:  white;
-    
+    padding-top: 20px;
+    color: white;
+
 }
 
 .footer {
@@ -84,7 +77,7 @@
     justify-content: center;
     align-items: center;
     justify-content: space-between;
-    background-color:#34495E;
+    background-color: #34495E;
     font-weight: normal;
     position: fixed;
     height: 150px;
@@ -92,14 +85,58 @@
 }
 
 #termslink {
-    color:white;
+    color: white;
     text-decoration: none;
     text-align: center;
     font-size: 25px;
     height: 100%;
-    width:auto
-
+    width: auto
 }
-.page_grid{
+
+/* main page style */
+.main_content{
+    display: flex;
+    flex-direction: column;
+    padding-right: 5px;
+    height:100%;
+    overflow: scroll;
+}
+
+.top_img{
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 9rem;
+}
+#topimg{
+    height: 100%;
+    width: 100%;
+}
+#top_header {
+    font-family: 'Assistant', sans-serif;
+    text-align: right;
+    font-size: 30px;
+}
+.page_grid {
     display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 500px;
+    gap: 10px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.grid-item {
+    background-color:white;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px;
+    font-size: 20px;
+    font-family: 'Assistant', sans-serif;
+}
+.grid-item-image{
+    height: 150px;
+    width: 100px;
 }
