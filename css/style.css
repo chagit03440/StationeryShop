@@ -1,0 +1,10 @@
+.icon {
+    display: none;
+  }
+.sideBar{
+    background-color:blue ;
+
+  }
+  body {
+    background-color: yellow; /* Apply a background color to see if the file loads */
+}
