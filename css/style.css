@@ -1,3 +1,48 @@
+.sidebar{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100%;
+  width: 160px;
+  top: 0;
+  right: 0;
+  padding-top: 40px;
+  border:  1px solid rgb(221, 209, 209);
+}
+.links{
+  /* background-color: blue; */
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+#link {
+  float: right;
+  color: black;
+  font-size: 20px;
+  height: 50px;
+  padding-top: 5%;
+  padding: 20px;
+  text-align: right;
+  text-decoration: none;/*without under line on the text*/
+}
+#link:hover{
+  background-color: rgb(207, 248, 248);
+}
+.divider{
+ border-bottom: 1px solid rgb(221, 209, 209);
+ margin-bottom: 20px;
+ margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
 .footericons {
     display: flex;
     justify-content: center;
