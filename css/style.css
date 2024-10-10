@@ -1,10 +1,60 @@
-.icon {
-    display: none;
-  }
-.sideBar{
-    background-color:blue ;
+.footericons {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 10%;
+    padding-top: 30px;
+}
+    
+#icon{
+    color:white;
+    font-size: 25px;
+}
 
-  }
-body {
-    background-color: yellow; /* Apply a background color to see if the file loads */
+.ftxt{
+    font-size: 25px;
+    width: auto;
+    text-decoration: none;
+    align-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: normal;
+}
+.footertext {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    font-family: 'Assistant', sans-serif;
+    padding-top:20px;
+    color:  white;
+    
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    background-color:#34495E;
+    font-weight: normal;
+    position: fixed;
+    height: 150px;
+    bottom: 0;
+}
+
+#termslink {
+    color:white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 25px;
+    height: 100%;
+    width:auto
+
+}
+.page_grid{
+    display: grid;
 }
