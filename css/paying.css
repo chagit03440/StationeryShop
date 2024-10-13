@@ -9,11 +9,9 @@
     right: 0;
     padding-top: 40px;
     border: 1px solid rgb(221, 209, 209);
-    /* background-color: blue; */
 }
 
 .links {
-    /* background-color: blue; */
     height: 200px;
     display: flex;
     flex-direction: column;
@@ -59,17 +57,14 @@
 .form {
     text-align: right;
     margin-right: 180px;
-    /* background-color: aqua; */
     height: 500px;
 }
 
 .sum {
-    /* background-color: blueviolet; */
     margin-top: 100px;
 }
 
 .labels {
-    /* background-color: chartreuse; */
     height: 60px;
 }
 
@@ -96,7 +91,6 @@
     margin-top: 100px;
     display: flex;
     flex-direction: column;
-    /* background-color: aqua; */
     margin-left: 40px;
 }
 
@@ -123,16 +117,16 @@
     flex-direction: row;
     justify-content: space-between;
     width: 10%;
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
 #icon {
     color: white;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .ftxt {
-    font-size: 25px;
+    font-size: 20px;
     width: auto;
     text-decoration: none;
     align-content: center;
@@ -147,7 +141,7 @@
     justify-content: space-between;
     width: 100%;
     font-family: 'Assistant', sans-serif;
-    padding-top: 20px;
+    padding-top: 5px;
     color: white;
 
 }
@@ -162,7 +156,7 @@
     background-color: #34495E;
     font-weight: normal;
     position: fixed;
-    height: 150px;
+    height: 80px;
     bottom: 0;
 }
 
@@ -170,7 +164,7 @@
     color: white;
     text-decoration: none;
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
     height: 100%;
     width: auto
 }

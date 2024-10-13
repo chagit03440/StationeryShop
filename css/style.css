@@ -12,7 +12,6 @@
 }
 
 .links {
-    /* background-color: blue; */
     height: 200px;
     display: flex;
     flex-direction: column;
@@ -27,7 +26,6 @@
     padding: 20px;
     text-align: right;
     text-decoration: none;
-    /*without under line on the text*/
 }
 
 .link:hover {
@@ -93,7 +91,7 @@
     background-color: #34495E;
     font-weight: normal;
     position: fixed;
-    height: 100px;
+    height: 80px;
     bottom: 0;
 }
 
@@ -121,12 +119,8 @@
 
 .top_img {
     background-color: white;
-    /* display: flex;
-    /* justify-content: center;
-    align-items: center; */
     height: 100px; 
     overflow: hidden;
-    /* Ensure the image doesn't overflow */
     position: relative;
 }
 
@@ -135,7 +129,6 @@
     height: 100%;
     object-fit: cover;
     position: absolute;
-    /* Positioning to fill the container */
     top: 0;
     left: 0;
     right: 0;
@@ -207,7 +200,7 @@
     height: 100px;
   }
   .page_grid {
-    grid-template-columns: 100%;  /* 1 column */
+    grid-template-columns: 100%; 
 }
 
 }
