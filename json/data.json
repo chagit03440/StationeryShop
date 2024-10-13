@@ -132,14 +132,14 @@
         "catalogId": 39,
         "title": "מארז 10 מחקים של סטדלר",
         "price": 8.0,
-        "image": "/images/craft/02.jpg"
+        "image": "/images/02.jpg"
     },
     {
         "catalogId": 40,
         "title": "מחדד מיכל סטדלר",
         "price": 7.9,
         "old_price": 10.7,
-        "image": "/images/craft/22.jpg"
+        "image": "/images/22.jpg"
     },
     {
         "catalogId": 41,
