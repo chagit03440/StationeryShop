@@ -206,5 +206,8 @@
     width: 100px;
     height: 100px;
   }
+  .page_grid {
+    grid-template-columns: 100%;  /* 1 column */
+}
 
 }

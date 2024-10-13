@@ -5,7 +5,7 @@ let basket = [];  // Array to hold cart items
 document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById('link_paying').addEventListener('click', function () {
-        window.location.href = "../html/paying.html"; 
+        window.location.href = "../html/paying.html";
     });
     const savedBasket = localStorage.getItem('basket');
     if (savedBasket) {
@@ -45,6 +45,11 @@ function populateGrid(gridData, gridContainer) {
         // Create an image element
         const img = document.createElement('img');
         img.src = gridData[i].image;  // Set the image source
+
+        img.onerror = function () {
+            this.src = "../images/iq2sub.jpg";  // Fallback image
+        };
+
         img.classList.add('grid-item-image'); // Optional: Add a class for styling
 
         // Create a price element
@@ -55,10 +60,10 @@ function populateGrid(gridData, gridContainer) {
         const addToCartButton = document.createElement('button');
         addToCartButton.innerText = "הוספה לסל";
         addToCartButton.classList.add('add-to-cart-button');
-       
-         // Add event listener to the button
-         addToCartButton.addEventListener('click', () => {
-            addToBasket(gridData[i]); 
+
+        // Add event listener to the button
+        addToCartButton.addEventListener('click', () => {
+            addToBasket(gridData[i]);
         });
 
 
@@ -74,7 +79,7 @@ function populateGrid(gridData, gridContainer) {
 // Function to add item to the basket
 function addToBasket(item) {
     basket.push(item);  // Add item to basket
-    localStorage.setItem('basket', JSON.stringify(basket)); 
+    localStorage.setItem('basket', JSON.stringify(basket));
     updateCartCount();  // Update the cart count on the page
     alert(`${item.title} added to cart!`);  // Show confirmation
 }
