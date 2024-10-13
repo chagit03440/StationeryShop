@@ -5,7 +5,7 @@ let basket = [];  // Array to hold cart items
 document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById('link_paying').addEventListener('click', function () {
-        window.location.href = "payment.html"; 
+        window.location.href = "../html/paying.html"; 
     });
     const savedBasket = localStorage.getItem('basket');
     if (savedBasket) {
