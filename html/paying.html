@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/paying.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
 </head>
-
 <body>
     <nav id=mySidebar class="sidebar">
         <div class="links">
@@ -31,15 +29,26 @@
         </div>
 
     </nav>
-    <div class="main_content">
-        <h1 id="top_header">כלי-כתיבה</h1>
-        <div class="top_img">
-            <img id="topimg" src="https://www.psagot.shop/imgs/hero.jpg">
+    <form class="form">
+        <h1>עגלת הקניות</h1>
+        <p>תשלום בביט או בפייבוקס</p>
+        <div class="labels">
+            <label>
+                <input id= "label" type="text" placeholder="כתובת + דירה + קוד כניסה" name="address" >
+            </label><br>
+            <label>
+                <input id= "label" type="text" placeholder="טלפון" name="phone" >
+            </label>
         </div>
-        <div id="page_grid" class="page_grid">
+        <div class="sum">
+           <p id="sumtext"> סכ"ה: 0 </p>
+            <label>
+                <input id="send" type="submit" value="לשליחת ההזמנה" name="send" >
+            </label>
+            <p>בשלב הבא אפשר להתכתב עם נציג ולשנות את ההזמנה </p>
         </div>
-    </div>
-    <div class="footer">
+
+        <div class="footer">
         <div class="footericons">
             <a href="https://www.instagram.com" target="_blank">
                 <i id="icon" class="fab fa-instagram"></i>
@@ -60,7 +69,9 @@
             </div>
         </div>
     </div>
-    <script dafer type="module" src="../js/script.js"></script>
+    </div>
+        
+    
+    </form>
 </body>
-
 </html>

@@ -1,3 +1,4 @@
+/*side bar*/
 .sidebar {
     display: flex;
     flex-direction: column;
@@ -38,7 +39,14 @@
     margin-bottom: 20px;
     margin-top: 20px;
 }
-
+#logo{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.logo{
+  padding-left: 10px;
+}
 /* footer style */
 .footericons {
     display: flex;
@@ -96,6 +104,9 @@
     font-size: 20px;
     height: 100%;
     width: auto
+}
+#items{
+  display: none;
 }
 
 /* main page style */
@@ -165,4 +176,35 @@
 .grid-item-image {
     height: 150px;
     width: 100px;
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar{
+    position: fixed;
+    flex-direction: row;
+    height: 80px;
+    width: 100%;
+    padding-top: 0;
+    background-color: white;
+    justify-content: space-between;
+  }
+  .links{
+    display: none;
+  }
+  #items{
+    display: block;
+    width: 180px;
+    height: 60px;
+    text-align: center;
+    margin-top: 10px;
+    border: none;
+  }
+  .main_content{
+    padding-top: 20%;
+  }
+  #logo{
+    width: 100px;
+    height: 100px;
+  }
+
 }
