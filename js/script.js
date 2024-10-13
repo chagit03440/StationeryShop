@@ -40,6 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
         gridContainer.appendChild(cell);
     }
 });
+document.getElementById('link_stationery').addEventListener('click', function() {
+    ;
+});
 function myFunction() {
     var x = document.getElementById("mySiderBar");
     if (x.className === "sideBar") {
