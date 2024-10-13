@@ -39,14 +39,17 @@
     margin-bottom: 20px;
     margin-top: 20px;
 }
-#logo{
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+
+#logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
 }
-.logo{
-  padding-left: 10px;
+
+.logo {
+    padding-left: 10px;
 }
+
 /* footer style */
 .footericons {
     display: flex;
@@ -105,8 +108,9 @@
     height: 100%;
     width: auto
 }
-#items{
-  display: none;
+
+#items {
+    display: none;
 }
 
 /* main page style */
@@ -124,7 +128,7 @@
     /* display: flex;
     /* justify-content: center;
     align-items: center; */
-    height: 100px; 
+    height: 100px;
     overflow: hidden;
     /* Ensure the image doesn't overflow */
     position: relative;
@@ -147,6 +151,7 @@
     text-align: right;
     font-size: 30px;
 }
+
 #notebooks-description {
     font-size: 1.2em;
     color: #333;
@@ -179,35 +184,41 @@
 }
 
 @media screen and (max-width: 600px) {
-  .sidebar{
-    position: fixed;
-    flex-direction: row;
-    height: 80px;
-    width: 100%;
-    padding-top: 0;
-    background-color: white;
-    justify-content: space-between;
-  }
-  .links{
-    display: none;
-  }
-  #items{
-    display: block;
-    width: 180px;
-    height: 60px;
-    text-align: center;
-    margin-top: 10px;
-    border: none;
-  }
-  .main_content{
-    padding-top: 20%;
-  }
-  #logo{
-    width: 100px;
-    height: 100px;
-  }
-  .page_grid {
-    grid-template-columns: 100%;  /* 1 column */
-}
+    .sidebar {
+        position: fixed;
+        flex-direction: row;
+        height: 80px;
+        width: 100%;
+        padding-top: 0;
+        background-color: white;
+        justify-content: space-between;
+    }
+
+    .links {
+        display: none;
+    }
+
+    #items {
+        display: block;
+        width: 180px;
+        height: 60px;
+        text-align: center;
+        margin-top: 10px;
+        border: none;
+    }
+
+    .main_content {
+        padding-top: 20%;
+    }
+
+    #logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .page_grid {
+        grid-template-columns: 100%;
+        /* 1 column */
+    }
 
 }
