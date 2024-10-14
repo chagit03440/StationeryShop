@@ -48,7 +48,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function updateCartCount() {
     const payingLink = document.getElementById('link_paying');
-    payingLink.innerHTML = `<b>(${basket.length}) לתשלום</b> <i class="fa fa-shopping-cart"></i>`;
+    let count = 0;
+    for (let i = 0; i < basket.length; i++) {
+        count += basket[i].quantity;
+    }
+    payingLink.innerHTML = `<b>(${count}) לתשלום</b> <i class="fa fa-shopping-cart"></i>`;
 }
 
 
@@ -100,8 +104,15 @@ function showsItems() {
             basket[i].quantity += 1;
             count.innerHTML = basket[i].quantity;
             localStorage.setItem('basket', JSON.stringify(basket));
-            payingLink.innerHTML = `<b>(${basket.length}) לתשלום</b> <i class="fa fa-shopping-cart"></i>`;
-            alert("count " + basket[i].quantity);
+        });
+
+        lessbtn.addEventListener('click', function () {
+            basket[i].quantity -= 1;
+            if(basket[i].quantity==0){
+                basket.splice(i, 1);
+            }
+            count.innerHTML = basket[i]?.quantity || 0;
+            localStorage.setItem('basket', JSON.stringify(basket));
 
 
         });
