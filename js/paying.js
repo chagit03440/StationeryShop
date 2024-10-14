@@ -63,21 +63,28 @@ function myFunction() {
 }
 function showsItems() {
     const divItems = document.getElementById("items_paying");
-    divItems.innerHTML ='';
+    divItems.innerHTML = '';
     let cell;
+    let sumPrice = 0;
+    let storedBasket = localStorage.getItem('basket');
+    basket = storedBasket ? JSON.parse(storedBasket) : [];
     for (let i = 0; i < basket.length; i++) {
         cell = document.createElement('div');
         cell.classList.add('show_item');
-        // const count = document.createElement('p');    
+        const count = document.createElement('p');
+        count.classList.add('countItem');
+        count.innerHTML = basket[i].quantity;
         const titleItem = document.createElement('p');
         titleItem.innerText = basket[i].title;
         const price = document.createElement('p');
         price.innerText = basket[i].price;
         const lessbtn = document.createElement('button');
         lessbtn.classList.add("btnAddDelete");
+        lessbtn.id = "btnDelete";
         lessbtn.innerText = "-1";
         const morebtn = document.createElement('button');
         morebtn.classList.add("btnAddDelete");
+        morebtn.id = "btnAdd";
         morebtn.innerText = "+1";
 
         // divItems.appendChild(count);
@@ -85,10 +92,23 @@ function showsItems() {
         cell.appendChild(lessbtn);
         cell.appendChild(price);
         cell.appendChild(titleItem);
+        cell.appendChild(count);
         divItems.appendChild(cell);
-           
+        sumPrice += basket[i].price * basket[i].quantity;
+
+        morebtn.addEventListener('click', function () {
+            count.innerHTML = basket[i].quantity + 1;
+
+            const existingItem = basket.find(basketItem => basketItem.title === basket[i].title);
+            existingItem.quantity += 1;
+            alert("count " + existingItem.quantity);
+
+        });
     }
-    
+    const sum = document.getElementById('sumtext');
+    sum.innerHTML = `${sumPrice} :סכ"ה`;
+
 }
+
 
 
