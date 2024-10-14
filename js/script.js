@@ -118,8 +118,8 @@ function populateGrid(gridData, gridContainer) {
         closebtn.innerHTML = "X";  // X button to close modal
         closebtn.fdprocessedid = "whwffp";
 
-        poptitle.appendChild(header);
         poptitle.appendChild(closebtn);
+        poptitle.appendChild(header);
 
         // Create the modal image element
         const modalImg = document.createElement('img');
@@ -193,16 +193,7 @@ function populateGrid(gridData, gridContainer) {
     }
 }
 
-// Function to open the modal with the clicked image
-function openModal(imageElement) {
-    const modal = document.getElementById("myModal");
-    const modalImg = document.getElementById("myImg");
-    const captionText = document.getElementById("caption");
 
-    modal.style.display = "block"; // Show the modal
-    modalImg.src = imageElement.src; // Set the modal image source to the clicked image
-    captionText.innerHTML = imageElement.alt; // Set the caption text to the image alt text
-}
 // Function to add item to the basket
 function addToBasket(item) {
 

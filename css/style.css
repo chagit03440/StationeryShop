@@ -180,6 +180,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
+    height: 70%;
 }
 
 #myImg:hover {
@@ -212,6 +213,7 @@
     padding: 20px;
     border-radius: 5px;
     width: 70%;
+    height: 70%;
     max-width: 700px;
 }
 
@@ -238,9 +240,14 @@
     font-size: 1.2em;
     color: #333;
 }
+.poptitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
 /* The Close Button */
 .close {
-    position: absolute;
     top: 15px;
     right: 35px;
     color: #f1f1f1;
@@ -248,6 +255,7 @@
     font-weight: bold;
     transition: 0.3s;
     z-index: 10;
+
 }
 
 .close:hover,
