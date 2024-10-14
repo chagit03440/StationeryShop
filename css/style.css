@@ -123,7 +123,7 @@
 
 .top_img {
     background-color: white;
-    height: 100px; 
+    height: 100px;
     overflow: hidden;
     position: relative;
 }
@@ -176,36 +176,135 @@
     width: 100px;
 }
 
-@media screen and (max-width: 600px) {
-  .sidebar{
-    position: fixed;
-    flex-direction: row;
-    height: 80px;
-    width: 100%;
-    padding-top: 0;
-    background-color: white;
-    justify-content: space-between;
-  }
-  .links{
-    display: none;
-  }
-  #items{
-    display: block;
-    width: 180px;
-    height: 60px;
-    text-align: center;
-    margin-top: 10px;
-    border: none;
-  }
-  .main_content{
-    padding-top: 20%;
-  }
-  #logo{
-    width: 100px;
-    height: 100px;
-  }
-  .page_grid {
-    grid-template-columns: 100%; 
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    height: 70%;
 }
 
+#myImg:hover {
+    opacity: 0.7;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3; /* On top of sidebar */
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Sheer black background */
+    backdrop-filter: blur(5px); /* Optional: Blurs the page behind modal */
+    overflow-y: auto; /* Allow scrolling if content is too tall */
+}
+
+/* Modal Content Wrapper */
+.modal-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 70%;
+    height: 70%;
+    max-width: 700px;
+}
+
+
+/* Modal Content */
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 60vh; /* Limit the image size */
+    object-fit: contain;
+    display: block;
+    margin-bottom: 20px;
+    background-color: white; /* Ensure content background is white */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+.poptitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+/* The Close Button */
+.close {
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    z-index: 10;
+
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .sidebar {
+        position: fixed;
+        flex-direction: row;
+        height: 80px;
+        width: 100%;
+        padding-top: 0;
+        background-color: white;
+        justify-content: space-between;
+    }
+
+    .links {
+        display: none;
+    }
+
+    #items {
+        display: block;
+        width: 180px;
+        height: 60px;
+        text-align: center;
+        margin-top: 10px;
+        border: none;
+    }
+
+    .main_content {
+        padding-top: 20%;
+    }
+
+    #logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .page_grid {
+        grid-template-columns: 100%;
+    }
+
+    .modal-content {
+        width: 100%;
+    }
 }
