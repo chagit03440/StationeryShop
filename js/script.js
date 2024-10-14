@@ -61,7 +61,7 @@ function populateGrid(gridData, gridContainer) {
         const title = document.createElement('p');
         title.innerText = gridData[i].title;
 
-        // Create an image element
+        // Create an image element for the grid
         const img = document.createElement('img');
         img.src = gridData[i].image;  // Set the image source
         img.onerror = function () {
@@ -69,7 +69,7 @@ function populateGrid(gridData, gridContainer) {
         };
         img.classList.add('grid-item-image'); // Optional: Add a class for styling
 
-      
+
         // Create a quantity element
         const quantity = document.createElement('p');
         let storedBasket = localStorage.getItem('basket');
@@ -77,11 +77,11 @@ function populateGrid(gridData, gridContainer) {
 
         // Check if the item already exists in the basket
         const existItem = basket.find(basketItem => basketItem.catalogId === gridData[i].catalogId);
-
         if (existItem) {
             quantity.innerText = `Quantity: ${existItem.quantity}`;
+        } else {
+            quantity.innerText = `Quantity: 0`;
         }
-        quantity.innerText = `Quantity: ${0}`;
         quantity.id = `quantity-${gridData[i].catalogId}`;
 
         // Create a price element
@@ -93,14 +93,98 @@ function populateGrid(gridData, gridContainer) {
         addToCartButton.innerText = "הוספה לסל";
         addToCartButton.classList.add('add-to-cart-button');
 
+        // Create a wrapper for modal content
+        const modalContentWrapper = document.createElement('div');
+        modalContentWrapper.classList.add('modal-content-wrapper'); // New wrapper class
+
+        // Create the modal container div
+        const modal = document.createElement('div');
+        modal.id = "myModal";
+        modal.classList.add('modal');
+
+        const poptitle = document.createElement('div');
+        poptitle.id = "poptitle";
+        poptitle.classList.add('poptitle');
+
+        const header = document.createElement('div');
+        header.id = "popHeader";
+        header.classList.add('header');
+        header.innerText = title.innerText;
+
+
+        // Create the close button (span) for the modal
+        const closebtn = document.createElement('btn');
+        closebtn.classList.add('close');
+        closebtn.innerHTML = "X";  // X button to close modal
+        closebtn.fdprocessedid = "whwffp";
+
+        poptitle.appendChild(header);
+        poptitle.appendChild(closebtn);
+
+        // Create the modal image element
+        const modalImg = document.createElement('img');
+        modalImg.classList.add('modal-content');
+        modalImg.id = "myImg";  // Same as your intended ID for the modal image
+
+        // const description = document.createElement('p');
+        // description.id = "description";
+        // caption.innerText = gridData[i].title;
+
+        // Create the bottom for the modal (optional)
+        const bottom = document.createElement('div');
+        bottom.classList.add('bottom');
+        bottom.id = "bottom";
+
+        bottom.appendChild(price);
+        bottom.appendChild(quantity);
+        bottom.appendChild(addToCartButton);
+
+
+        // Append the close button, image, and caption to the wrapper container
+        modalContentWrapper.appendChild(poptitle);
+        modalContentWrapper.appendChild(modalImg);
+        modalContentWrapper.appendChild(bottom);
+
+        // Append the wrapper to the modal
+        modal.appendChild(modalContentWrapper);
+
+        // Add click event listener for the image to open the modal
+        img.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            // Ensure price, quantity, and addToCartButton are visible in the modal
+            bottom.innerHTML = ''; // Clear previous content
+            bottom.appendChild(price.cloneNode(true));  // Clone and append the price element
+            bottom.appendChild(quantity.cloneNode(true));  // Clone and append the quantity element
+            // Clone the button and reapply the event listener
+            const clonedAddToCartButton = addToCartButton.cloneNode(true);
+            clonedAddToCartButton.addEventListener('click', () => {
+                addToBasket(gridData[i]);
+            });
+            bottom.appendChild(clonedAddToCartButton);
+        };
+
+        // Close the modal when the close button (X) is clicked
+        closebtn.onclick = function () {
+            modal.style.display = "none";
+        };
+
+        // Close the modal when clicking outside the image
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+
         // Add event listener to the button
         addToCartButton.addEventListener('click', () => {
             addToBasket(gridData[i]);
         });
 
-        // Append image, title, price, quantity, and button to the cell
+        // Append elements to the cell
         cell.appendChild(title);
         cell.appendChild(img);
+        cell.appendChild(modal);
         cell.appendChild(quantity);
         cell.appendChild(price);
         cell.appendChild(addToCartButton);
@@ -109,6 +193,16 @@ function populateGrid(gridData, gridContainer) {
     }
 }
 
+// Function to open the modal with the clicked image
+function openModal(imageElement) {
+    const modal = document.getElementById("myModal");
+    const modalImg = document.getElementById("myImg");
+    const captionText = document.getElementById("caption");
+
+    modal.style.display = "block"; // Show the modal
+    modalImg.src = imageElement.src; // Set the modal image source to the clicked image
+    captionText.innerHTML = imageElement.alt; // Set the caption text to the image alt text
+}
 // Function to add item to the basket
 function addToBasket(item) {
 
@@ -151,7 +245,11 @@ function addToBasket(item) {
 // Function to update the cart count on the "Paying" link
 function updateCartCount() {
     const payingLink = document.getElementById('link_paying');
-    payingLink.innerHTML = `<b>(${basket.length}) לתשלום</b> <i class="fa fa-shopping-cart"></i>`;
+    let count = 0;
+    for (let i = 0; i < basket.length; i++) {
+        count += basket[i].quantity;
+    }
+    payingLink.innerHTML = `<b>(${count}) לתשלום</b> <i class="fa fa-shopping-cart"></i>`;
 }
 
 function replaceImage() {
