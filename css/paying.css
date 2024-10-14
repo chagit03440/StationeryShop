@@ -55,9 +55,14 @@
 
 /*form style*/
 .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: right;
     margin-right: 180px;
     height: 500px;
+    margin-bottom: 10px;
+    overflow-y: scroll;
 }
 
 .sum {
@@ -85,6 +90,7 @@
 
 #sumtext {
     font-size: 20px;
+    /* margin-bottom: 1rem; */
 }
 
 #items_paying {
@@ -92,6 +98,7 @@
     display: flex;
     flex-direction: column;
     margin-left: 40px;
+    margin-bottom: 50px;
 }
 
 .show_item {
