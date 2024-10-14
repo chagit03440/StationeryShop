@@ -227,7 +227,7 @@ function addToBasket(item) {
     }
 
     // Show confirmation
-    alert(`${item.title} added to cart!`);
+    // alert(`${item.title} added to cart!`);
 }
 
 
