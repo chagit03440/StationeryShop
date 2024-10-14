@@ -61,7 +61,7 @@ function populateGrid(gridData, gridContainer) {
         const title = document.createElement('p');
         title.innerText = gridData[i].title;
 
-        // Create an image element for the grid
+        // Create an image element
         const img = document.createElement('img');
         img.src = gridData[i].image;  // Set the image source
         img.onerror = function () {
@@ -69,7 +69,7 @@ function populateGrid(gridData, gridContainer) {
         };
         img.classList.add('grid-item-image'); // Optional: Add a class for styling
 
-
+      
         // Create a quantity element
         const quantity = document.createElement('p');
         let storedBasket = localStorage.getItem('basket');
@@ -77,6 +77,7 @@ function populateGrid(gridData, gridContainer) {
 
         // Check if the item already exists in the basket
         const existItem = basket.find(basketItem => basketItem.catalogId === gridData[i].catalogId);
+
         if (existItem) {
             quantity.innerText = `Quantity: ${existItem.quantity}`;
         } else {
@@ -193,7 +194,6 @@ function populateGrid(gridData, gridContainer) {
     }
 }
 
-
 // Function to add item to the basket
 function addToBasket(item) {
 
@@ -202,6 +202,7 @@ function addToBasket(item) {
     basket = storedBasket ? JSON.parse(storedBasket) : [];
 
     // Check if the item already exists in the basket
+    
     const existingItem = basket.find(basketItem => basketItem.catalogId === item.catalogId);
 
     if (existingItem) {

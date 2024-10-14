@@ -97,11 +97,12 @@ function showsItems() {
         sumPrice += basket[i].price * basket[i].quantity;
 
         morebtn.addEventListener('click', function () {
-            count.innerHTML = basket[i].quantity + 1;
+            basket[i].quantity += 1;
+            count.innerHTML = basket[i].quantity;
+            localStorage.setItem('basket', JSON.stringify(basket));
+            payingLink.innerHTML = `<b>(${basket.length}) לתשלום</b> <i class="fa fa-shopping-cart"></i>`;
+            alert("count " + basket[i].quantity);
 
-            const existingItem = basket.find(basketItem => basketItem.title === basket[i].title);
-            existingItem.quantity += 1;
-            alert("count " + existingItem.quantity);
 
         });
     }
